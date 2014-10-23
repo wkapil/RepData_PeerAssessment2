@@ -32,7 +32,7 @@ top20 <- fatalities[1:20, ]
 library(ggplot2)
 ggplot(data = top20, aes(EVTYPE, FATALITIES, fill = FATALITIES)) + geom_bar(stat = "identity") + 
   xlab("Event") + ylab("Fatalities") + ggtitle("Fatalities caused by Events (top 20) ") + 
-  coord_flip() + theme(legend.position = "none")
+   theme(legend.position = "none")
 
 injuries <- as.data.table(subset(aggregate(INJURIES ~ EVTYPE, data = stormdata, 
                                            FUN = "sum"), INJURIES > 0))
@@ -41,7 +41,7 @@ injuries <- injuries[order(-INJURIES), ]
 top20i <- injuries[1:20, ]
 ggplot(data = top20i, aes(EVTYPE, INJURIES, fill = INJURIES)) + geom_bar(stat = "identity") + 
   xlab("Event") + ylab("Injuries") + ggtitle("Injuries caused by Events (top 20) ") + 
-  coord_flip() + theme(legend.position = "none")
+   theme(legend.position = "none")
 
 unique(stormdata$PROPDMGEXP)
 
@@ -78,4 +78,4 @@ library(scales)
 top20c <- costs[1:20, ]
 ggplot(data = top20c, aes(EVTYPE, EconomicCosts, fill = EconomicCosts)) + geom_bar(stat = "identity") + 
   scale_y_continuous(labels = comma) + xlab("Event") + ylab("Economic costs in $") + 
-  ggtitle("Economic costs caused by Events (top 20) ") + coord_flip() + theme(legend.position = "none")
+  ggtitle("Economic costs caused by Events (top 20) ") +  theme(legend.position = "none")
