@@ -79,3 +79,4 @@ top20Costs <- costs[1:20, ]
 ggplot(data = top20Costs, aes(EVTYPE, EconomicCosts, fill = EconomicCosts)) + geom_bar(stat = "identity") + 
   scale_y_continuous(labels = comma) + xlab("Event") + ylab("Economic costs in $") + coord_flip() +
   ggtitle("Economic costs caused by Events (top 20) ") +  theme(legend.position = "none")
+  
